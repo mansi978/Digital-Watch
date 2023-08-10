@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="st.css">
+</head>
+
+<body>
+    <main>
+        <section>
+            <div id="m"></div>
+        </section>
+        <form>
+            <button type="reset" onclick="stp()">Stop Watch</button>
+            <button type="reset" onclick="str()">Start Watch</button>
+        </form>
+        <script>let a
+            let time
+            let myInterval=setInterval(tim,1000)
+            function tim(){
+                    a = new Date()
+                    time = a.getHours() + ':' + a.getMinutes() + ':' + a.getSeconds()
+                    document.getElementById("m").innerHTML = time 
+            }
+            function stp(){
+                clearInterval(myInterval)
+            }
+            function str(){
+                myInterval=setInterval(tim,1000)
+            }
+            </script>
+    </main>
+</body>
+
+</html>
